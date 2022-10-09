@@ -1,4 +1,4 @@
-export default function (config) {
+export default function ({ config }) {
     return {
         ...config,
         name: process.env === "production" ? "Simple Chat" : "Simple Chat Dev",
@@ -19,5 +19,17 @@ export default function (config) {
                 projectId: "63cb4453-e4ce-46d2-881f-28f333896063",
             },
         },
+        jsEngine: "hermes",
+        plugins: [
+            [
+                "@config-plugins/react-native-webrtc",
+                {
+                    cameraPermission:
+                        "Allow $(PRODUCT_NAME) to access your camera :)",
+                    microphonePermission:
+                        "Allow $(PRODUCT_NAME) to access your microphone :)",
+                },
+            ],
+        ],
     };
 }
