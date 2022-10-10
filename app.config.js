@@ -30,6 +30,7 @@ export default function ({ config }) {
                         "Allow $(PRODUCT_NAME) to access your microphone :)",
                 },
             ],
+            "expo-community-flipper",
         ],
     };
 }
